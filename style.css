@@ -9,7 +9,8 @@ body
 	margin: 0;
 	padding: 0;
 	color: #333;
-	background-color: #eee;
+	background-color: #F2FBFD;
+	border: double 1px;
 }
 h1,h2,h3,h4,h5,h6
 {
@@ -18,10 +19,12 @@ h1,h2,h3,h4,h5,h6
 #container {
 	max-width:900;
 	margin: 0 auto;
+	font-family: Verdana;
 }
 #header {
-	background-color:#DDDDDD;
+	background-color:#34C4D7;
 	margin: 0 auto;
+	font-family: Verdana;
 }
 #htable {
 	width:100%;
@@ -29,19 +32,29 @@ h1,h2,h3,h4,h5,h6
 #hleft {
 	font-size:72px;
 	width:300;
+	border: solid 0px #644D3B;
+	border-radius: 10px;
 }
 #htop {
 	font-size:32px;
 	padding: 0px 20px;
+	border: solid 0px #644D3B;
+	border-radius: 10px;
 }
 
 /*menu*/
+
+#hbot {
+  	border: solid 1px #644D3B;
+  	border-radius: 10px 10px 0px 0px;
+}
+
 #hbot > ul {
   width: auto;
   list-style-type: none;
   padding: 0;
   margin: 0;
-  background: #ffffff;
+  background: #34C4D7;
 }
 
 #hbot > ul li {
@@ -51,17 +64,44 @@ h1,h2,h3,h4,h5,h6
   padding: 0px 20px;
 }
   
-#hbot > ul li a.active,
+#hbot > ul li a:link,
+#hbot > ul li a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+#hbot > ul li a:active,
 #hbot > ul li a:hover {
-  background: #d80041;
-  color: #fff;
-  text-shadow: 0px 1px 0px #000;
+  background: transparent;
+  color: black;
+  text-shadow: 0px 0px 0px #000;
+  text-decoration: underline;
 }
 
 /*content*/
 #content {
 	min-height: 500px;
 }
+
+#content a:link {
+	text-decoration: none;
+	color:black;
+}
+
+#content a:visited {
+	text-decoration: none;
+	color:black;
+}
+
+#content a:active,
+#content a:hover {
+  background: transparent;
+  color: black;
+  text-shadow: 0px 0px 0px #000;
+  text-decoration: underline;
+}
+
+
 #center {
 	text-align:center;
 	margin: 10px auto;
@@ -73,31 +113,51 @@ h1,h2,h3,h4,h5,h6
 }
 
 .box {
-	border: solid 1px;
+	border: solid 3px #644D3B;
 	margin: 5px 30px;
 	padding: 30px;
 	height: 200px;
+	border-radius: 25px;
+}
+
+.hbox {
+	background-color: #34C4D7;
 }
 
 .widebox {
 	border: solid 1px;
 	margin: 5px 60px;
+	border: solid 1px #644D3B;
+	border-radius: 10px;
+	height: 150px;
 }
+
 .smallbox {
-	border: solid 1px;
+	border: solid 1px #644D3B;
+	border-radius: 10px;
 	width: 300px;
 	margin: 5px auto;
+}
+
+.abox {
+	border: solid 1px;
+	margin: 5px 60px;
+	border: solid 2px #644D3B;
+	border-radius: 10px;
+	height: 350px;
 }
 
 p {
 	padding: 0 30px;
 	text-align:justify;
 }
+
 ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
+
 #about {
 	text-indent: 50px;
 }
