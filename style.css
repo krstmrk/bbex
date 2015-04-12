@@ -1,0 +1,131 @@
+/*pang layout. hindi siguro to kasama sa final*/
+td {
+	border: solid 1px;
+}
+
+/*kasama sa lahat ng page*/
+body
+{
+	margin: 0;
+	padding: 0;
+	color: #333;
+	background-color: #eee;
+}
+h1,h2,h3,h4,h5,h6
+{
+	margin: 0 0 12px;
+}
+#container {
+	max-width:900;
+	margin: 0 auto;
+}
+#header {
+	background-color:#DDDDDD;
+	margin: 0 auto;
+}
+#htable {
+	width:100%;
+}
+#hleft {
+	font-size:72px;
+	width:300;
+}
+#htop {
+	font-size:32px;
+	padding: 0px 20px;
+}
+
+/*menu*/
+#hbot > ul {
+  width: auto;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
+}
+
+#hbot > ul li {
+  display: block;
+  *display: inline-block;
+  zoom: 1;
+  padding: 0px 20px;
+}
+  
+#hbot > ul li a.active,
+#hbot > ul li a:hover {
+  background: #d80041;
+  color: #fff;
+  text-shadow: 0px 1px 0px #000;
+}
+
+/*content*/
+#content {
+	min-height: 500px;
+}
+#center {
+	text-align:center;
+	margin: 10px auto;
+	clear:both;
+}
+
+#left, #right {
+	margin: 10px auto;
+}
+
+.box {
+	border: solid 1px;
+	margin: 5px 30px;
+	padding: 30px;
+	height: 200px;
+}
+
+.widebox {
+	border: solid 1px;
+	margin: 5px 60px;
+}
+.smallbox {
+	border: solid 1px;
+	width: 300px;
+	margin: 5px auto;
+}
+
+p {
+	padding: 0 30px;
+	text-align:justify;
+}
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+#about {
+	text-indent: 50px;
+}
+#indented {
+	padding-left: 80px;
+}
+
+#footer {
+	text-align:center;
+	clear:both;
+}
+
+/*wide*/
+@media (min-width: 800px) {
+	#hbot > ul li {
+	  display: inline-block;
+	}
+	
+	#left
+	{
+		float: left;
+		width: 50%;
+		*margin-right: 4%;
+	}
+
+	#right
+	{
+		float: left;
+		width: 50%;
+	}
+}
