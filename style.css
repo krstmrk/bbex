@@ -26,6 +26,7 @@ h1,h2,h3,h4,h5,h6{
 	background-color:#34C4D7;
 	margin: 0 auto;
 	font-family: Verdana;
+	border-bottom: thin solid #644D3B;
 }
 
 #htable {
@@ -51,6 +52,7 @@ h1,h2,h3,h4,h5,h6{
 #hbot {
   	border: solid 1px #644D3B;
   	border-radius: 10px 10px 0px 0px;
+  	border-bottom: thin solid transparent;
 }
 
 #hbot > ul {
@@ -59,6 +61,7 @@ h1,h2,h3,h4,h5,h6{
   padding: 0;
   margin: 0;
   background: #34C4D7;
+  border-radius: 10px 10px 0px 0px;
 }
 
 #hbot > ul li {
@@ -209,7 +212,6 @@ ul {
 
 #slider, #slider div.sliderInner {
     width:770px;height:200px;
-    border-radius: 6px
 }
 
 #slider {

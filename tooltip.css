@@ -68,7 +68,7 @@ div#tooltipAjaxSpin {
 div#TooltipWrapper {
 	position:absolute;
 	visibility:hidden;
-	overflow:visible;
+	overflow:hidden;
 	z-index:9999999999;
 	top:0px;
 }
