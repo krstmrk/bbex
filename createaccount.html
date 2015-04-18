@@ -2,6 +2,56 @@
 <head>
 <title></title>
 <link rel="stylesheet" href="style.css">
+
+	<script type="text/javascript">
+		function validateForm() {
+		var x = true;
+		document.getElementById("username").innerHTML = "";
+		document.getElementById("pass").innerHTML = "";
+		document.getElementById("confpass").innerHTML = "";
+		document.getElementById("mobile").innerHTML = "";
+		document.getElementById("home").innerHTML = "";
+		document.getElementById("email").innerHTML = "";
+		document.getElementById("zip").innerHTML = "";
+		
+		if (document.forms["createaccount"]["username"].value.length < 4) {
+			document.getElementById("username").innerHTML = " *must be 4 characters/longer";
+			x = false;
+		}
+		if (document.forms["createaccount"]["pass"].value.length < 4) {
+			document.getElementById("pass").innerHTML = " *must be 4 characters/longer";
+			x = false;
+		}
+		if (document.forms["createaccount"]["confpass"].value != document.forms["createaccount"]["pass"].value) {
+			document.getElementById("confpass").innerHTML = " *input correct password";
+			x = false;
+		}
+		if (isNaN(document.forms["createaccount"]["mobile"].value)) {
+			document.getElementById("mobile").innerHTML = " *number only";
+			x = false;
+		}
+		if (isNaN(document.forms["createaccount"]["home"].value)) {
+			document.getElementById("home").innerHTML = " *number only";
+			x = false;
+		}
+		if (document.forms["createaccount"]["email"].value.indexOf('@') < 0) {
+			document.getElementById("email").innerHTML = " *invalid email address";
+			x = false;
+		}
+		if (isNaN(document.forms["createaccount"]["zip"].value)) {
+			document.getElementById("zip").innerHTML = " *number only";
+			x = false;
+		}
+		return x;
+		}
+	</script>
+	<style>
+		#username, #pass, #confpass, #mobile, #home, #email, #zip {
+			font-size:10px;
+			color:red;
+		}
+	</style>
+
 </head>
 <body>
 <div id="header">
@@ -29,45 +79,54 @@
 
 <div id="content">
 	<div id="container">
-		<form action="accountinfo.html" method="post">
+		<form name="createaccount" action="accountinfo.html" onsubmit="return validateForm()" method="post">
 		<br><center><h1>Create an Account</h1></center>
 		<div id="left">
+			<p>Account Details</p>
+			<p id="indented">
+				Username:<br>
+				<input type="text" name="username" value="" ><span id="username"></span><br>
+				Password:<br>
+				<input type="text" name="pass" value="" ><span id="pass"></span><br>
+				Confirm Password:<br>
+				<input type="text" name="confpass" value="" ><span id="confpass">
+			</p>
 			<p>Personal Info</p>
 			<p id="indented">
 				First Name:<br>
-				<input type="text" name="firstname" value=""><br>
+				<input type="text" name="firstname" value="" ><span id="firstname"></span><br>
 				Middle Name:<br>
-				<input type="text" name="middlename" value=""><br>
+				<input type="text" name="middlename" value="" ><span id="middlename"></span><br>
 				Last Name:<br>
-				<input type="text" name="lastname" value=""><br>
+				<input type="text" name="lastname" value="" ><span id="lastname"></span><br>
 				Birthdate:<br>
-				<input type="text" name="birthdate" value=""><br>
+				<input type="text" name="birthdate" value="" ><span id="birthdate"></span><br>
 				Sex:<br>
 				<input type="text" name="sex" value="">
 			</p>
+		</div>
+		<div id="right">
 			<p>Contact Info</p>
 			<p id="indented">
 				Mobile Number:<br>
-				<input type="text" name="mobile" value=""><br>
+				<input type="text" name="mobile" value="" ><span id="mobile"></span><br>
 				Home Number:<br>
-				<input type="text" name="home" value=""><br>
+				<input type="text" name="home" value="" ><span id="home"></span><br>
 				Email Address:<br>
-				<input type="text" name="email" value="">
+				<input type="text" name="email" value="" ><span id="email">
 			</p>
-		</div>
-		<div id="right">
 			<p>Address Details</p>
 			<p id="indented">
 				Street:<br>
-				<input type="text" name="street" value=""><br>
+				<input type="text" name="street" value="" ><br>
 				City:<br>
-				<input type="text" name="city" value=""><br>
+				<input type="text" name="city" value="" ><br>
 				Province:<br>
-				<input type="text" name="province" value=""><br>
+				<input type="text" name="province" value="" ><br>
 				Region:<br>
-				<input type="text" name="region" value=""><br>
+				<input type="text" name="region" value="" ><br>
 				Zip Code:<br>
-				<input type="text" name="zip" value="">
+				<input type="text" name="zip" value="" ><span id="zip"></span>
 			</p>
 		</div>
 		<div id="center">

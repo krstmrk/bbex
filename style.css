@@ -104,7 +104,8 @@ h1,h2,h3,h4,h5,h6
 
 #center {
 	text-align:center;
-	margin: 10px auto;
+	margin: 0px auto;
+	padding: 0;
 	clear:both;
 }
 
@@ -129,7 +130,7 @@ h1,h2,h3,h4,h5,h6
 	margin: 5px 60px;
 	border: solid 1px #644D3B;
 	border-radius: 10px;
-	height: 150px;
+	height: 140px;
 }
 
 .smallbox {

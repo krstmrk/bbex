@@ -2,6 +2,23 @@
 <head>
 <title>Batangas - Bicol Expressway</title>
 <link rel="stylesheet" href="style.css">
+	
+	<script type="text/javascript">
+
+	var slideimages = new Array() // create new array to preload images
+	slideimages[0] = new Image() // create new instance of image object
+	slideimages[0].src = "banner1.png" // set image src property to image path, preloading image in the process
+	slideimages[1] = new Image()
+	slideimages[1].src = "banner2.png"
+	slideimages[2] = new Image()
+	slideimages[2].src = "banner3.png"
+
+	</script>
+	
+	<style>
+	#slide {margin:auto;padding:auto;}
+	</style>
+	
 </head>
 <body>
 <div id="header">
@@ -31,7 +48,29 @@
 	<div id="container">
 		<div id="center">
 			<br><div class="widebox">
-				<br><br><br>slideshow<br>
+				<img src="banner1.png" id="slide" />
+
+				<script type="text/javascript">
+
+				//variable that will increment through the images
+				var step=0
+
+				function slideit(){
+				 //if browser does not support the image object, exit.
+				 if (!document.images)
+				  return
+				 document.getElementById('slide').src = slideimages[step].src
+				 if (step<2)
+				  step++
+				 else
+				  step=0
+				 //call function "slideit()" every 2.5 seconds
+				 setTimeout("slideit()",2500)
+				}
+
+				slideit()
+
+				</script>
 			</div>
 		</div>
 		<div id="left">
@@ -39,9 +78,9 @@
 				<center><h2>Manage Account</h2></center><br>
 				<form action="accountinfo.html" method="POST">
 				Username:<br>
-				<input type="text" name="username" value=""><br>
+				<input type="text" name="username" value="" required><br>
 				Password:<br>
-				<input type="password" name="password" value=""><br>
+				<input type="password" name="password" value="" required><br>
 				<input type="submit" value="Login"><br>
 				</form>
 				<a href="createaccount.html">Create Account</a><br>
