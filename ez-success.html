@@ -2,6 +2,21 @@
 <head>
 <title></title>
 <link rel="stylesheet" href="style.css">
+<script type="text/javascript">
+
+	var slideimages = new Array() // create new array to preload images
+	slideimages[0] = new Image() // create new instance of image object
+	slideimages[0].src = "banner1.png" // set image src property to image path, preloading image in the process
+	slideimages[1] = new Image()
+	slideimages[1].src = "banner2.png"
+	slideimages[2] = new Image()
+	slideimages[2].src = "banner3.png"
+
+	</script>
+	
+	<style>
+	#slide {margin:auto;padding:auto;}
+	</style>
 </head>
 <body>
 <div id="header">
@@ -30,10 +45,32 @@
 <div id="content">
 	<div id="container">
 		<div id="center">
-			<div class="widebox">
-				<br><br><br>slideshow<br><br>
+			<br><div class="widebox">
+				<img src="banner1.png" id="slide"/>
+
+				<script type="text/javascript">
+
+				//variable that will increment through the images
+				var step=0
+
+				function slideit(){
+				 //if browser does not support the image object, exit.
+				 if (!document.images)
+				  return
+				 document.getElementById('slide').src = slideimages[step].src
+				 if (step<2)
+				  step++
+				 else
+				  step=0
+				 //call function "slideit()" every 2.5 seconds
+				 setTimeout("slideit()",2500)
+				}
+
+				slideit()
+
+				</script>
 			</div>
-			<br><br><br>
+			<br><br><br><br><br>
 			<h1>Deposit Successful!</h1>
 			<a href="ez-dashboard.html">Go Back to Dashboard</a>
 		</div>
