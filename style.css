@@ -179,6 +179,10 @@ ul {
 	clear:both;
 }
 
+.popup{
+	display:none !important;
+}
+
 /*wide*/
 @media (min-width: 800px) {
 	#hbot > ul li {
