@@ -1,23 +1,13 @@
 <html>
 <head>
 <title>Batangas - Bicol Expressway</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<link rel="stylesheet" href="tooltip.css" type="text/css"/>
+<script src="slideshow.js" type="text/javascript"></script>
+<script src="tooltip.js" type="text/javascript"></script>
 <script type="text/javascript">
-
-	var slideimages = new Array() // create new array to preload images
-	slideimages[0] = new Image() // create new instance of image object
-	slideimages[0].src = "banner1.png" // set image src property to image path, preloading image in the process
-	slideimages[1] = new Image()
-	slideimages[1].src = "banner2.png"
-	slideimages[2] = new Image()
-	slideimages[2].src = "banner3.png"
-
-	</script>
-	
-	<style>
-	#slide {margin:auto;padding:auto;}
-	</style>
-	
+        imageSlider.thumbnailPreview(function (thumbIndex) { return "<img src='images/thumb" + (thumbIndex + 1) + ".jpg' style='width:100px;height:60px;' />"; });
+</script>	
 </head>
 <body>
 <div id="header">
@@ -25,10 +15,10 @@
 		<table id="htable">
 		<tr>
 			<td id="hleft" rowspan="2">
-				 <img src="logo.png" height="100px" width="300px">
+				 <img src="images/logo.png" height="100px" width="300px">
 			</td>
 			<td id="htop">
-				<img src="logo1.png" height="100px" width="400px">
+				<img src="images/logo1.png" height="100px" width="400px">
 			</td>
 		</tr>
 		<tr>
@@ -46,32 +36,16 @@
 <div id="content">
 	<div id="container">
 		<div id="center">
-			<br><div class="widebox">
-				<img src="banner1.png" id="slide"/>
-
-				<script type="text/javascript">
-
-				//variable that will increment through the images
-				var step=0
-
-				function slideit(){
-				 //if browser does not support the image object, exit.
-				 if (!document.images)
-				  return
-				 document.getElementById('slide').src = slideimages[step].src
-				 if (step<2)
-				  step++
-				 else
-				  step=0
-				 //call function "slideit()" every 2.5 seconds
-				 setTimeout("slideit()",2500)
-				}
-
-				slideit()
-
-				</script>
-			</div>
-		</div>
+			<br>
+			<div id="sliderFrame">
+        		<div id="slider">
+            		<img src="images/banner1.png" alt="Welcome to BBEX!"/>
+            		<img src="images/banner2.png"/>
+            		<img src="images/banner3.png"/>
+            		<img src="images/banner4.png"/>
+        		</div>
+    		</div>
+		</div><br>
 		<div id="left">
 			<div class="box">
 				<center><h2>Manage Account</h2></center><br>
@@ -87,7 +61,7 @@
 		</div>
 		<div id="right">
 			<div class="box">
-				<center><a href="ez-login.html"><img src="ezpass.png" height="150px" width="300px"></a></center>
+				<center><a href="ez-login.html"><img src="images/ezpass.png" height="150px" width="300px"></a></center>
 			</div>
 		</div>
 	</div>
@@ -96,7 +70,7 @@
 <div id="footer">
 	<hr width="300">
 	<div id="container">
-		copyright 2015<br><br>
+		copyright 2015<br>
 	</div>
 </div>
 </body>
