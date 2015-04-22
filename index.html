@@ -1,79 +1,165 @@
+<!DOCTYPE HTML>
 <html>
-<head>
-<title>Batangas - Bicol Expressway</title>
-<link rel="stylesheet" href="style.css" type="text/css"/>
-<link rel="stylesheet" href="tooltip.css" type="text/css"/>
-<script src="slideshow.js" type="text/javascript"></script>
-<script src="tooltip.js" type="text/javascript"></script>
-<script type="text/javascript">
-        imageSlider.thumbnailPreview(function (thumbIndex) { return "<img src='images/thumb" + (thumbIndex + 1) + ".jpg' style='width:100px;height:60px;' />"; });
-</script>	
-</head>
-<body>
-<div id="header">
-	<div id="container">
-		<table id="htable">
-		<tr>
-			<td id="hleft" rowspan="2">
-				 <img src="images/logo.png" height="100px" width="300px">
-			</td>
-			<td id="htop">
-				<img src="images/logo1.png" height="100px" width="400px">
-			</td>
-		</tr>
-		<tr>
-			<td id="hbot">
-				<ul>
-					<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.html">Home</a></li>
-					<li>|</li>
-					<li><a href="about.html">About BBEX</a></li>
-					<li>|</li>
-					<li><a href="ez-login.html">EZ Pass</a></li>
+	<head>
+		<title>Batangas - Bicol Expressway</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/jquery.scrollgress.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<script type="text/javascript" src="js/crossfade.js"></script>
+		
+		<script type="text/javascript">
+		var slideimages = new Array() // create new array to preload images	
+		slideimages[0] = new Image() // create new instance of image object
+		slideimages[0].src = "images/slider01.jpg" // set image src property to image path, preloading image in the process
+		slideimages[1] = new Image()
+		slideimages[1].src = "images/slider02.jpg"
+		slideimages[2] = new Image()
+		slideimages[2].src = "images/slider03.jpg"
+		slideimages[3] = new Image()
+		slideimages[3].src = "images/slider04.jpg"
+		slideimages[4] = new Image()
+		slideimages[4].src = "images/slider05.jpg"
+
+		</script>
+
+		
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+			<style>
+			#slide {margin:auto;padding:auto;}
+			</style>
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="landing" onLoad="runSlideshow()">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<h1><a href="index.html">B B E X</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li>
+							<a href="" class="icon fa-angle-down">Services</a>
+							<ul>
+								<li><a href="about.html">About BBEX</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
+								<li><a href="elements.html">EZ-Pass</a></li>
+							</ul>
+						</li>
+						<li> New here? <a href="#" class="button">Sign Up</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<h2>Batangas - Bicol Expressway</h2>
+				<p>Your safest and fastest way from Batangas to Bicol.</p>
+				<ul class="actions">
+					<li><a href="#" class="button special">Log In</a></li>
+					<li><a href="about.html" class="button">Want to Learn More?</a></li>
 				</ul>
-			</td>
-		</tr></table>
-	</div>
-</div>
+			</section>
 
-<div id="content">
-	<div id="container">
-		<div id="center">
-			<br>
-			<div id="sliderFrame">
-        		<div id="slider">
-            		<img src="images/banner1.png" alt="Welcome to BBEX!"/>
-            		<img src="images/banner2.png"/>
-            		<img src="images/banner3.png"/>
-            		<img src="images/banner4.png"/>
-        		</div>
-    		</div>
-		</div><br>
-		<div id="left">
-			<div class="box">
-				<center><h2>Manage Account</h2></center><br>
-				<form action="accountinfo.html" method="POST">
-				Username:<br>
-				<input type="text" name="username" value="" required><br>
-				Password:<br>
-				<input type="password" name="password" value="" required><br>
-				<input type="submit" value="Login"><br>
-				</form>
-				<a href="createaccount.html">Create Account</a><br>
-			</div>
-		</div>
-		<div id="right">
-			<div class="box">
-				<center><a href="ez-login.html"><img src="images/ezpass.png" height="150px" width="300px"></a></center>
-			</div>
-		</div>
-	</div>
-</div>
+		<!-- Main -->
+			<section id="main" class="container">
 
-<div id="footer">
-	<hr width="300">
-	<div id="container">
-		copyright 2015<br>
-	</div>
-</div>
-</body>
+				<section class="box special">
+					<header class="major">
+						<h2> Your perfect guide to the perfect destination
+						<br />
+						without the hassle of traffic</h2>
+						<p>Blandit varius ut praesent nascetur eu penatibus nisi risus faucibus nunc ornare<br />
+						adipiscing nunc adipiscing. Condimentum turpis massa.</p>
+					</header>
+					<span class="image featured">
+					<ul id="gallery" style="visibility: visible;list-style:none;margin:0;padding:0;">
+					<li style="margin:0;padding:0;"><img src="images/slider01.jpg" id="slide"/></li>
+					<li style="margin:0;padding:0;"><img src="images/slider02.jpg" /></li>
+					<li style="margin:0;padding:0;"><img src="images/slider03.jpg" /></li>
+					<li style="margin:0;padding:0;"><img src="images/slider04.jpg" /></li>
+					<li style="margin:0;padding:0;"><img src="images/slider05.jpg" /></li>
+					</ul>
+					<img src="images/slider05.jpg" style="z-index:-1;visibility:hidden;" />
+
+    			</span>
+				</section>
+
+				<section class="box special features">
+					<div class="features-row">
+						<section>
+							<span><img src="images/sublogo1.png" height="100px" width="100px"/></span>
+							<h3>Fast Travel</h3>
+							<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+						</section>
+						<section>
+							<span><img src="images/sublogo2.png" height="100px" width="100px"/></span>				<h3>Beautiful Scenery</h3>
+							<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+						</section>
+					</div>
+					<div class="features-row">
+						<section>
+							<span><img src="images/sublogo3.png" height="100px" width="100px"/></span>
+							<h3>Speed Limit Policy</h3>
+							<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+						</section>
+						<section>
+							<span><img src="images/sublogo4.png" height="100px" width="100px"/></span>
+							<h3>Tite</h3>
+							<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+						</section>
+					</div>
+				</section>
+
+				<div class="row">
+					<div class="6u 12u(narrower)">
+
+						<section class="box special">
+							<span class="image featured"><img src="images/loginpic.jpg" alt="" /></span>
+							<h3>Manage Your Account</h3>
+							<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+							<ul class="actions">
+								<li><a href="#" class="button alt">Login</a></li>
+							</ul>
+						</section>
+
+					</div>
+					<div class="6u 12u(narrower)">
+
+						<section class="box special">
+							<span class="image featured"><img src="images/ezpasspic.jpg" alt="" /></span>
+							<h3>EZ Pass</h3>
+							<p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
+							<ul class="actions">
+								<li><a href="#" class="button alt">Learn More</a></li>
+							</ul>
+						</section>
+
+					</div>
+				</div>
+
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; All rights reserved.</li>
+				</ul>
+			</footer>
+
+	</body>
 </html>
