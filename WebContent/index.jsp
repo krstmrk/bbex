@@ -136,7 +136,18 @@
 							<h3>Manage Your Account</h3>
 							<p>Manage your personal information, view your account balance, and deposit to your EZ Pass account.</p>
 							<ul class="actions">
-								<li><a href="login.jsp" class="button alt">Login</a></li>
+								<li>
+									<%
+					    			if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
+									%>
+									<a href="login.jsp" class="button alt">Login</a>
+									<%} else {
+										%>
+									<a href='ezdashboard.jsp'  class="button alt">Manage Account</a>
+									<%
+					   				 }
+									%>
+								</li>
 							</ul>
 						</section>
 
