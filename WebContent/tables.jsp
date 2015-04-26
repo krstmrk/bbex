@@ -1,3 +1,5 @@
+		
+        
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -54,42 +56,45 @@
 
 		<!-- Main -->
 			<section id="main" class="container 75%">
-				
-				<div class="row">
-					<div class="8u">
-
-						<section class="box">
-						
-							<h2>Checkout</h2>
-							<form action="ez-success.jsp" method="POST">
-							<p>Billing Address</p>
-							<p id="indented">
-							First Name: <input type="text" name="firstname" value=""><br>
-							Last Name: <input type="text" name="lastname" value=""><br>
-							Email Address: <input type="text" name="email" value=""><br>
-							Contact Number: <input type="text" name="contact" value=""><br>
-							Address:<br>
-							<textarea name="address" value=""></textarea><br>
-							Postal Code: <input type="text" name="postal" value="">
-							</p>
-							<p>Payment Method</p>
-								<div class="12u 12u(narrower)">
-									<input type="radio" name="paymethod" id="credit" value="credit" checked>
-									<label for="credit">Credit Card Payment</label>
-								</div>
-								<div class="12u 12u(narrower)">
-									<input type="radio" name="paymethod" id="paypal" value="paypal">
-									<label for="paypal">Paypal Express Checkout</label>
-								</div>
-							<p>Review Your Order</p>
-							<% String amt = request.getParameter("amount");
-							session.setAttribute("amt", amt); %>
-							<p id="indented">Deposit - P<%= session.getAttribute("amt") %></p>
-							<input type="submit" value="Submit">
-							</form>
-						</section>
-
-					</div>
+				<div class="box">
+					<h2>Members</h2>
+					<%@ page import ="java.sql.*" %>
+					<% 
+			                      
+			            Class.forName("com.mysql.jdbc.Driver");
+					    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test",
+					            "root", "pass");
+					    Statement st = con.createStatement();
+					    ResultSet resultset;
+					    resultset = st.executeQuery("select * from members");
+			        %>
+			
+			        <TABLE BORDER="1">
+			            <TR>
+			                <TH>ID</TH>
+			                <TH>first_name</TH>
+			                <TH>last_name</TH>
+			                <TH>email</TH>
+			                <TH>uname</TH>
+			                <TH>pass</TH>
+			                <TH>regdate</TH>
+			                <TH>permission</TH>
+			                <TH>balance</TH>
+			            </TR>
+			            <% while(resultset.next()){ %>
+			            <TR>
+			                <TD> <%= resultset.getString(1) %></td>
+			                <TD> <%= resultset.getString(2) %></TD>
+			                <TD> <%= resultset.getString(3) %></TD>
+			                <TD> <%= resultset.getString(4) %></TD>
+			                <TD> <%= resultset.getString(5) %></TD>
+			                <TD> <%= resultset.getString(6) %></TD>
+			                <TD> <%= resultset.getString(7) %></TD>
+			                <TD> <%= resultset.getString(8) %></TD>
+			                <TD> <%= resultset.getString(9) %></TD>
+			            </TR>
+			            <% } %>
+			        </TABLE>
 				</div>
 			</section>
 
@@ -102,3 +107,6 @@
 
 	</body>
 </html>
+
+
+        

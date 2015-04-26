@@ -10,7 +10,7 @@
             "root", "pass");
     Statement st = con.createStatement();
     //ResultSet rs;
-    int i = st.executeUpdate("insert into members(first_name, last_name, email, uname, pass, regdate) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + pwd + "', CURDATE())");
+    int i = st.executeUpdate("insert into members(first_name, last_name, email, uname, pass, regdate, permission, balance) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + pwd + "', CURDATE(), 'user', 0)");
     if (i > 0) {
         //session.setAttribute("userid", user);
         response.sendRedirect("welcome.jsp");

@@ -61,7 +61,18 @@
 				<h2>Batangas - Bicol Expressway</h2>
 				<p>Your safest and fastest way from Batangas to Bicol.</p>
 				<ul class="actions">
-					<li><a href="register.jsp" class="button special">Sign Up</a></li>
+					<li>
+					<%
+					    if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
+					%>
+					<a href="register.jsp" class="button special">Sign Up</a>
+					<%} else {
+					%>
+					<a href='ezdashboard.jsp'  class="button special">EZ Dashboard</a>
+					<%
+					    }
+					%>
+					</li>
 					<li><a href="about.jsp" class="button">Learn More</a></li>
 				</ul>
 			</section>
@@ -151,6 +162,12 @@
 				<ul class="copyright">
 					<li>&copy; All rights reserved.</li>
 				</ul>
+				<%
+				    if ((session.getAttribute("userid") != null) && (session.getAttribute("userlevel").equals("admin"))) {
+				%>
+				<br><br><a href="tables.jsp">Admin Panel</a>
+				<%}
+				%>
 			</footer>
 	</body>
 </html>

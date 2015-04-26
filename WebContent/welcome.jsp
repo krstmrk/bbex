@@ -55,8 +55,29 @@
 		<!-- Main -->
 			<section id="main" class="container 75%">
 				<div class="box">
-					Registration is Successful.
-					Please Log In Here <a href='login.jsp'>Go to Login</a>
+					<p>Registration is Successful!</p>
+					<h2>Login</h2>
+					<form method="post" action="loginc.jsp">
+						<div class="row uniform 75%">
+							<div class="6u 8u(narrower)">
+								<input type="text" name="uname" value="" placeholder="Username" />
+							</div>
+						</div>
+						<div class="row uniform 75%">
+							<div class="6u 8u(narrower)">
+								<input type="password" name="pass" value="" placeholder="Password" />
+							</div>
+						</div>
+						<br>
+						<p>New here? <a href="register.jsp">Sign Up</a></p>
+						<div class="row uniform">
+							<div class="12u">
+								<ul class="actions align-left">
+									<li><input type="submit" value="Login" /></li>
+								</ul>
+							</div>
+						</div>
+					</form>
 				</div>
 			</section>
 

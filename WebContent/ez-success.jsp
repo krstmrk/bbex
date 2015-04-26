@@ -54,70 +54,42 @@
 
 		<!-- Main -->
 			<section id="main" class="container 75%">
-				<header>
-							<h2>EZ Pass Dashboard</h2>
-				</header>
-				<div class="row">
-					<div class="6u 12u(narrower)">
-
-						<section class="box">
-							<p>This is your dashboard. Here you can view information
-							 about your account. You can also deposit by selecting an
-							  amout to the right.</p>
+				<div class="box">
 							<%@ page import ="java.sql.*" %>
-							<%
+					<%
+					    if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
+					%>
+					You are not logged in<br/>
+					<a href="index.jsp">Please Login</a>
+					<%} else {
+					      // create a java mysql database connection
 							    Class.forName("com.mysql.jdbc.Driver");
-							    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test",
+							    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test",
 							            "root", "pass");
-							    Statement st = con.createStatement();
+							    Statement st = conn.createStatement();
 							    ResultSet rs;
 							    rs = st.executeQuery("select * from members where uname='" + session.getAttribute("userid") + "'");
-							    if (rs.next()) { %>
-							    	<p>
-							    	ID: <%= rs.getString(1) %><br>
-							    	Username: <%= rs.getString(5) %><br>
-							    	Email Address: <%= rs.getString(4) %><br>
-							    	First Name: <%= rs.getString(2) %><br>
-							    	Last Name: <%= rs.getString(3) %><br>
-							    	Registration Date: <%= rs.getString(7) %><br><br>
-									Last Widthdraw:<br>
-									Last Deposit:<br><br>
-							    	Balance: P<%= rs.getString(9) %><br>
-							    	</p>
-							    <%} else {
-							    	response.sendRedirect("login.jsp");
-							    }
-							%>
-						</section>
-
-					</div>
-					<div class="6u 12u(narrower)">
-
-						<section class="box">
-							<span class="image featured"><img src="images/loginpic.jpg" alt="" /></span>
-							<h3>Deposit Now</h3>
-							<form action="ez-checkout.jsp" method="POST">
-							<div class="6u 12u(narrower)">
-								<input type="radio" name="amount" id="500" value="500" checked>
-								<label for="500">P500.00</label>
-							</div>
-							<div class="6u 12u(narrower)">
-								<input type="radio" name="amount" id="1000" value="1000">
-								<label for="1000">P1000.00</label>
-							</div>
-							<div class="6u 12u(narrower)">
-								<input type="radio" name="amount" id="1500" value="1500">
-								<label for="1500">P1500.00</label>
-							</div>
-							<div class="6u 12u(narrower)">
-								<input type="radio" name="amount" id="-1000" value="-1000">
-								<label for="-1000">P-1000.00</label>
-							</div>
-							<input type="submit" class="alt" value="Submit">
-							</form>
-						</section>
-
-					</div>
+					      // create the java mysql update preparedstatement
+					      rs.next();
+					      String query = "update members set balance = ? where uname = ?";
+					      PreparedStatement preparedStmt = conn.prepareStatement(query);
+					      double bal = Double.parseDouble(""+rs.getString(9));
+					      double amount = Double.parseDouble(""+session.getAttribute("amt"));
+					      String uname = "" + session.getAttribute("userid");
+					      preparedStmt.setDouble(1, (amount+bal));
+					      preparedStmt.setString(2, uname);
+					 
+					      // execute the java preparedstatement
+					      preparedStmt.executeUpdate();
+					       
+					      conn.close();
+						
+					%>
+					<header><h2>Payment Successful!</h2>
+					<p>You have paid P<%= session.getAttribute("amt") %>. Go back to <a href="ezdashboard.jsp">Dashboard</a></p></header>
+					<%
+					    }
+					%>
 				</div>
 			</section>
 
@@ -130,3 +102,5 @@
 
 	</body>
 </html>
+
+
