@@ -43,28 +43,18 @@
 		<!-- Main -->
 			<section id="main" class="container 75%">
 				<div class="box">
-					<h2>Login</h2>
-					<form method="post" action="#">
-						<div class="row uniform 75%">
-							<div class="6u 8u(narrower)">
-								<input type="text" name="subject" id="subject" value="" placeholder="Username" />
-							</div>
-						</div>
-						<div class="row uniform 75%">
-							<div class="6u 8u(narrower)">
-								<input type="password" name="subject" id="subject" value="" placeholder="Password" />
-							</div>
-						</div>
-						<br>
-						<p>New here? <a href="register.html">Sign Up</a></p>
-						<div class="row uniform">
-							<div class="12u">
-								<ul class="actions align-left">
-									<li><input type="submit" value="Login" /></li>
-								</ul>
-							</div>
-						</div>
-					</form>
+					<%
+					    if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
+					%>
+					You are not logged in<br/>
+					<a href="index.jsp">Please Login</a>
+					<%} else {
+					%>
+					Welcome <%=session.getAttribute("userid")%>
+					<a href='logout.jsp'>Log out</a>
+					<%
+					    }
+					%>
 				</div>
 			</section>
 
@@ -81,3 +71,5 @@
 
 	</body>
 </html>
+
+

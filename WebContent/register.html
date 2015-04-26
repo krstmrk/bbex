@@ -92,20 +92,20 @@
 				<div class="box">
 					<h2>Create an Account</h2>
 					<p id="errorp">Already have an account? <a href="login.html">Log In</a></p>
-					<form  name="createaccount" action="#" onsubmit="return validateForm()" method="post">
+					<form  name="createaccount" action="registration.jsp" onsubmit="return validateForm()" method="post">
 						<div class="row">
 							<div class="6u 12u(mobilep)">
 								<h4>Account Details</h4>
 								<p id="indented">
-									<input type="text" name="username" value="" placeholder="Username"><span id="username"></span><br>
-									<input type="password" name="pass" value="" placeholder="Password"><span id="pass"></span><br>
+									<input type="text" name="uname" value="" placeholder="Username" required><span id="username"></span><br>
+									<input type="password" name="pass" value="" placeholder="Password" required><span id="pass"></span><br>
 									<input type="password" name="confpass" value="" placeholder="Confirm Password"><span id="confpass"><br></span>
 								</p>
 								<h4>Personal Info</h4>
 								<p id="indented">
-									<input type="text" name="firstname" value="" placeholder="First Name"><span id="firstname"></span><br>
+									<input type="text" name="fname" value="" placeholder="First Name"><span id="firstname"></span><br>
 									<input type="text" name="middlename" value="" placeholder="Middle Name"><span id="middlename"></span><br>
-									<input type="text" name="lastname" value="" placeholder="Last Name"><span id="lastname"></span><br>
+									<input type="text" name="lname" value="" placeholder="Last Name"><span id="lastname"></span><br>
 									<input type="text" name="birthdate" value="" placeholder="Birthdate"><span id="birthdate"></span><br>
 									<input type="text" name="sex" value="" placeholder="Sex">
 								</p>
@@ -115,7 +115,7 @@
 								<p id="indented">
 									<input type="text" name="mobile" value="" placeholder="Mobile Number"><span id="mobile"></span><br>
 									<input type="text" name="home" value="" placeholder="Home Number"><span id="home"></span><br>
-									<input type="text" name="email" value="" placeholder="Email Address"><span id="email"><br></span>
+									<input type="text" name="email" value="" placeholder="Email Address" required><span id="email"><br></span>
 								</p>
 								<h4>Address Details</h4>
 								<p id="indented">

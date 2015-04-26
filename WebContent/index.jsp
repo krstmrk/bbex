@@ -39,7 +39,21 @@
 								<li><a href="ezdashboard.html">EZ-Pass</a></li>
 							</ul>
 						</li>
-						<li> New here? <a href="register.html" class="button">Sign Up</a></li>
+						<li>
+						
+						
+							<%
+							    if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
+							%>
+							New here? <a href="register.html" class="button">Sign Up</a>
+							<%} else {
+							%>
+							Welcome <%=session.getAttribute("userid")%>
+							<a href='logout.jsp'  class="button">Log out</a>
+							<%
+							    }
+							%>
+						</li>
 					</ul>
 				</nav>
 			</header>
