@@ -23,19 +23,31 @@
 
 		<!-- Header -->
 			<header id="header" class="skel-layers-fixed">
-				<h1><a href="index.html">B B E X</a></h1>
+				<h1><a href="index.jsp">B B E X</a></h1>
 				<nav id="nav">
 					<ul>
-						<li><a href="index.html">Home</a></li>
+						<li><a href="index.jsp">Home</a></li>
 						<li>
 							<a href="" class="icon fa-angle-down">Services</a>
 							<ul>
-								<li><a href="about.html">About BBEX</a></li>
-								<li><a href="contact.html">Contact Us</a></li>
-								<li><a href="ezdashboard.html">EZ-Pass</a></li>
+								<li><a href="about.jsp">About BBEX</a></li>
+								<li><a href="contact.jsp">Contact Us</a></li>
+								<li><a href="ezdashboard.jsp">EZ-Pass</a></li>
 							</ul>
 						</li>
-						<li> New here? <a href="register.html" class="button">Sign Up</a></li>
+						<li>
+							<%
+							    if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
+							%>
+							<a href="login.jsp" class="button">Log In</a>
+							<%} else {
+							%>
+							Welcome <%=session.getAttribute("userid")%>
+							<a href='logout.jsp'  class="button">Log Out</a>
+							<%
+							    }
+							%>
+						</li>
 					</ul>
 				</nav>
 			</header>
@@ -60,10 +72,6 @@
 
 		<!-- Footer -->
 			<footer id="footer">
-				<ul class="icons">
-					<li><a href="https://twitter.com" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="https://facebook.com" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-				</ul>
 				<ul class="copyright">
 					<li>&copy; All rights reserved.</li>
 				</ul>

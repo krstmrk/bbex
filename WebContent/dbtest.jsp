@@ -57,14 +57,8 @@
 
 	<!-- Footer -->
 	<footer id="footer">
-	<ul class="icons">
-		<li><a href="https://twitter.com" class="icon fa-twitter"><span
-				class="label">Twitter</span></a></li>
-		<li><a href="https://facebook.com" class="icon fa-facebook"><span
-				class="label">Facebook</span></a></li>
-	</ul>
 	<ul class="copyright">
-		<li>&copy; All rights reserved.</li>
+					<li>&copy; All rights reserved.</li>
 	</ul>
 	</footer>
 
